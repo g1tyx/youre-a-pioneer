@@ -1,0 +1,435 @@
+html,body {
+  background-color: #eee;
+  margin: 0px;
+  padding: 0px;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+game {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+  width: 900px;
+  height: 400px;
+  margin: 0em;
+  padding: 0em;
+  background-color: white;
+  overflow: hidden;
+  border: 1px solid grey;
+}
+game[loaded] #menu_button {
+  display: none;
+}
+game[loaded] #menu_select ~ #menu {
+  display: none;
+}
+#menu_button {
+  position: absolute;
+  right: 0px;
+  font-size: 200%;
+  color: white;
+  background-color: blue;
+  opacity: 0.5;
+  user-select: none;
+  z-index: 3;
+}
+#menu_select:checked ~ #menu_button {
+  opacity: 1;
+  font-size: inherit;
+}
+#menu {
+  display: none;
+}
+
+#menu_select:checked ~ #menu
+{
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  display: flex;
+  padding: 10px;
+  background-color: white;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+presence {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+}
+presence a {
+  display: inline-block;
+  position: relative;
+  height: 32px;
+  width: 32px;
+}
+presence a desc {
+  display: none;
+}
+presence a:hover desc {
+  display: inline-block;
+  position: absolute;
+  top: -1em;
+}
+#discord_link {
+  background-image: url("images/logos/discord.svg");
+  background-size: contain;
+}
+#itchio_link {
+  background-image: url("images/logos/itchio-textless-black.svg");
+  background-size: contain;
+}
+#newgrounds_link {
+  background-image: url("images/logos/ng_tank.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-y: 6px;
+}
+#patreon_link{
+  background-image: url("images/logos/patreon.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+#twitter_link {
+  background-image: url("images/logos/Twitter_Logo_Blue.svg");
+  background-size: contain;
+}
+
+#full_screen[message="0"] {
+  display:none;
+}
+#full_screen desc {
+  display: none;
+}
+#full_screen {
+  display: block;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: white;
+  font-size: 200%;
+  z-index: 1;
+}
+#message message {
+  display: block;
+  margin: 0.5em;
+  font-size: 70%;
+}
+#message_clickers {
+  display: block;
+  position: absolute;
+  right: 50px;
+  bottom: 0px;
+}
+
+value {
+  display: block;
+}
+
+[active="0"] {
+  display: none;
+}
+
+desc {
+  display:none;
+}
+value:hover desc,
+skill name:hover desc,
+clicker:hover desc, 
+main-label:hover + desc,
+box:hover > main-label,
+image:hover > desc
+{
+  display: block;
+  position: absolute;
+  color: black;
+  background: white;
+  padding: 0.2em;
+  border: 0.1em solid black;
+  margin-top: 1em;
+  font-size: 10px;
+  z-index: 1;
+}
+desc:empty {
+  display: none !important;
+}
+
+pline mult {
+  display: none;
+}
+pbar {
+  display: block;
+  height: 0.8rem;
+  background-color: white;
+  border: 0.1rem solid black;
+}
+pbar exp {
+  display: block;
+  background-color: darkgrey;
+  color: #D8D8D8;
+  font-size: 0.6em;
+  height: 0.8rem;
+  width: calc(var(--fill-percent) * 1%);
+}
+skill clickers clickbox {
+  display: block;
+}
+
+clicker clickbox {
+  box-sizing: border-box;
+  display: inline-block;
+  user-select: none;
+  border: 0.08rem solid black;
+  border-radius: 0.4em;
+  min-width: 1em;
+  min-height: 1em;
+  padding: 0.2em;
+  background-color: #ddd;
+}
+
+clicker:hover:not(.disabled):not(:active) clickbox {
+  box-shadow: 0.1rem 0.1rem 0.2rem black;
+  z-index: 1;
+}
+clicker:active:not(.disabled) clickbox {
+  z-index: 1;
+}
+
+clicker.disabled clickbox {
+  background: transparent;
+  border-color: grey;
+  color: #ccc;
+}
+.autoclick clickbox {
+  border-radius: 0em;
+}
+
+image {
+  padding: .5em;
+}
+img {
+  display: block;
+  height: 3em;
+}
+automation {
+  background-color: lightyellow;
+  border: 1px solid lightgrey;
+  color: grey;
+}
+automation clicker clickbox {
+  background-color: transparent;
+  border-radius: 0px;
+  border: none;
+  box-shadow: none;
+}
+automation clicker.disabled clickbox {
+  color: black;
+  background: inherit;
+}
+automation clicker:hover:not(.disabled):not(:active) clickbox {
+  box-shadow: none;
+}
+
+#content {
+  margin: 3px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+#content > * {
+  flex-grow: 1;
+}
+#title clickbox {
+  background-color: lightskyblue;
+}
+#title clicker.disabled clickbox {
+  color: black;
+  border: 1px dashed lightskyblue;
+  background-color: transparent;
+}
+#title main-title {
+  font-family: Fantasy;
+  font-size: 200%;
+}
+#title_buts {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+#title_buts clickbox {
+  margin: 5px;
+  height: 25px;
+  width: 150px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+#title[active="1"] ~ #special {
+  display: none;
+}
+#achievements[active="1"] ~ #special {
+  display: none;
+}
+#credits[active="1"] ~ #special {
+  display: none;
+}
+#achieve {
+  display: grid;
+  grid: auto-flow 3.5em / auto auto auto auto;
+  column-gap: 5px;
+  row-gap: 5px;
+}
+#achieve :first-child {
+  grid-column: 1 / 5;
+  grid-row: 1;
+}
+#achieve :first-child clickbox {
+  width: 100px;
+  height: 2em;
+  position: relative;
+  left: 300px;
+}
+#achieve * {
+  height: 100%;
+  width: 100%;
+}
+#achieve clicker:not(:first-child) clickbox {
+  box-shadow: none;
+  border-radius: 0px;
+  background-color: lightblue;
+}
+#achieve clicker:not(:first-child).disabled clickbox {
+  box-shadow: none;
+  border-radius: 0px;
+  border: 2px dotted lightblue;
+  color: black;
+  background-color: white;
+}
+#achieve clicker:not(:first-child):hover desc {
+  background-color: white;
+  width: auto;
+  height: auto;
+}
+#credits[active="1"] {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+#credits clickbox {
+  display: block;
+  width: 100px;
+  height: 30px;
+}
+#resources {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 150px;
+}
+#resources main-label {
+  margin-top: 5px;
+  display: block;
+}
+#resources val:first-of-type {
+  margin-left: 20px;
+  display: inline-block;
+  min-width: 50px;
+}
+#special {
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 200px;
+}
+#special_buts {
+  display: flex;
+  flex-flow: column;
+}
+#village #v_wait,
+#town #t_wait,
+#city #c_wait {
+  height: 4px;
+}
+#v_wait multibar main-label,
+#v_wait multibar val,
+#t_wait multibar main-label,
+#t_wait multibar val,
+#c_wait multibar main-label,
+#c_wait multibar val {
+  display: none;
+}
+#v_wait box,
+#t_wait box,
+#c_wait box {
+  display: block;
+  height: 100%;
+  width: calc(var(--fill-percent) * 1%);
+  background-color: black;
+}
+#village[active="1"] {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+#village > * {
+  height: 100px;
+}
+#village clickbox {
+  background-color: lightgreen;
+}
+#village clicker.disabled clickbox {
+  color: black;
+  border: 1px dashed lightgreen;
+  background-color: transparent;
+}
+#town[active="1"] {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+#town > * {
+  height: 100px;
+}
+#town clickbox {
+  background-color: gold;
+}
+#town clicker.disabled clickbox {
+  color: black;
+  border: 1px dashed gold;
+  background-color: transparent;
+}
+#city[active="1"] {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
+}
+#city > * {
+  height: 100px;
+}
+#city clickbox {
+  background-color: lightseagreen;
+}
+#city clicker.disabled clickbox {
+  color: black;
+  border: 1px dashed lightseagreen;
+  background-color: transparent;
+}
+#special #special_buts {
+  margin-top: 5px;
+}
+#special clickbox {
+  background-color: #dad;
+}
+#special clicker.disabled clickbox {
+  color: black;
+  border: 1px dashed #dad;
+  background-color: transparent;
+}
+
