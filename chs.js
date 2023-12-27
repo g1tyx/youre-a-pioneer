@@ -68,8 +68,8 @@ var cnItems = {
     ": Chat with other players of this and similar games. ": "：与本游戏和类似游戏的其他玩家聊天。",
     ": Please support the author to ensure that more games can be created in the future!": "：请支持作者，保证以后能创作出更多的游戏！",
     "0 stars, button failed": "0 星，按钮失败",
-    "1 import for as much gold as other income + 20 with 2s cooldown": "1 次进口，获得与其他收入一样多的金币 + 20 次，冷却时间为 2 秒",
-    "10 gold/village with 5s cooldown": "10 金币/村庄，冷却时间 5 秒",
+    "1 import for as much gold as other income + 20 with 2s cooldown": "1 次进口，获得与其他收入一样多的黄金 + 20 次，冷却时间为 2 秒",
+    "10 gold/village with 5s cooldown": "10 黄金/村庄，冷却时间 5 秒",
     "10 support for 1 leisure/s, 1 culture/s": "10 支持 消耗 1 休闲/秒，1 文化/秒",
     "120 faith, 3 leisure/s, 2 knowledge/s for 15 faith/s, 15 culture/s with 3s cooldown": "120 信仰，3 休闲/秒，2 知识/秒，15 信仰/秒，15 文化/秒，冷却时间 3 秒",
     "150 knowledge, 2 leisure/s, 3 faith/s for 10 knowledge/s, 12 culture/s with 3s cooldown": "150 知识，2 休闲/秒，3 信仰/秒，10 知识/秒，12 文化/秒，冷却时间 3 秒",
@@ -93,7 +93,7 @@ var cnItems = {
     "Build Church": "建造教堂",
     "Build Library": "建造图书馆",
     "Build Town Hall. Then set up for next Village AND Town (get gold income)": "建造市政厅。 然后设置下一个村庄和城镇（获得黄金收入）",
-    "Collect 100 gold in taxes. Taxes are a fail-safe, sell imports and products for faster gains.": "收取 100 金币的税款。 税收是一种万无一失的措施，出售进口产品和产品以获得更快的收益。",
+    "Collect 100 gold in taxes. Taxes are a fail-safe, sell imports and products for faster gains.": "收取 100 黄金的税款。 税收是一种万无一失的措施，出售进口产品和产品以获得更快的收益。",
     "Complete the game": "完成游戏",
     "Credits/Reset": "鸣谢/重置",
     "Cut some Stone": "切一些石头",
@@ -211,23 +211,23 @@ var cnItems = {
     "Village Specialization": "村庄专业化",
     "Villages": "村庄",
     "10 preview population, and build the community center": "10预览人口，并建设社区中心",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
-    "": "",
+    "1 service/village for their use": "1 个服务/村庄供其使用",
+    "10 gold for 100 medicine": "10 黄金 换 100 药",
+    "10 gold for 100 metal": "10 黄金 换 100 金属",
+    "10 gold for 100 textiles": "10 黄金 换 100 纺织品",
+    "100 medicine for 10 gold with 1s cooldown": "100 药品 换 10 黄金，冷却时间 1 秒",
+    "100 metal for 10 gold with 1s cooldown": "100 金属 换 10 黄金，冷却时间为 1 秒",
+    "100 textiles for 10 gold with 1s cooldown": "100 纺织品 换 10 黄金，冷却时间 1 秒",
+    "Buy Medicine": "购买药品",
+    "Buy Metal": "购买金属",
+    "Buy Textiles": "购买纺织品",
+    "Imports": "进口",
+    "Incorporate Villages": "合并村庄",
+    "Leave Town": "离开城镇",
+    "Return to Town": "返回城镇",
+    "Sell Medicine": "出售药品",
+    "Sell Metal": "出售金属",
+    "Sell Textiles": "出售纺织品",
     "": "",
     "": "",
     "": "",
@@ -396,7 +396,7 @@ var cnItems = {
 
 //需处理的前缀，此处可以截取语句开头部分的内容进行汉化
 //例如：Coin: 13，Coin: 14，Coin: 15... 这种有相同开头的语句
-//可以在这里汉化开头："Coin: ":"金币: "
+//可以在这里汉化开头："Coin: ":"黄金: "
 var cnPrefix = {
     "\n": "\n",
     "                   ": "",
@@ -452,7 +452,7 @@ var cnPrefix = {
 
 //需处理的后缀，此处可以截取语句结尾部分的内容进行汉化
 //例如：13 Coin，14 Coin，15 Coin... 这种有相同结尾的语句
-//可以在这里汉化结尾：" Coin":" 金币"
+//可以在这里汉化结尾：" Coin":" 黄金"
 var cnPostfix = {
     "                   ": "",
     "                  ": "",
